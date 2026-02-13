@@ -82,3 +82,12 @@
     margin-right: 20px;
     width: 30px;
 }
+
+#models
+{
+    margin-right: 5px;
+    background-color: darkgray;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}

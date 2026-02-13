@@ -13,6 +13,12 @@
     </div>
 
     <div class="input-section">
+        <select name="models" id="models">
+            <option value="gpt-4.1-mini">gpt-4.1-mini</option>
+            <option value="o4-mini">o4-mini</option>
+            <option value="gpt-5-mini">gpt-5-mini</option>
+        </select>
+
         <input id="txt" type="text" placeholder="Type here">
         <button class="send-btn" onclick="send()">Send <img src="/static/assets/send-arrow.svg"></button>
     </div>
@@ -23,7 +29,12 @@
             out.innerText = "Loading...";
 
             const text = document.getElementById("txt").value;
-            const res = await axios.post("/api", { text });
+            const model = document.getElementById('models').value;
+            const res = await axios.post("/api", { 
+                text: text,
+                model: model
+            });
+
             const d = res.data.output;
             out.innerText = d;
         }

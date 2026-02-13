@@ -13,9 +13,12 @@ def index():
 def api():
     data = request.json
     text = data.get("text", "")
+    model = data.get("model", "gpt-4.1-mini")
+
+    print(model)
     
     response = client.chat.completions.create(
-        model="gpt-4.1-mini",
+        model=model,
         messages=[{"role": "user", "content": text}]
     )
     
