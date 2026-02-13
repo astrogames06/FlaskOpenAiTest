@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask OpenAI Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1 class="title">AI Test</h1>
+    <div class="output-section">
+        <img src="/static/assets/robot.svg" alt="robot">
+        <h1 id="out">OUTPUT</h1>
+    </div>
+
+    <div class="input-section">
+        <input id="txt" type="text" placeholder="Type here">
+        <button class="send-btn" onclick="send()">Send <img src="/static/assets/send-arrow.svg"></button>
+    </div>
+    
+    <script>
+        async function send() {
+            const out = document.getElementById("out");
+            out.innerText = "Loading...";
+
+            const text = document.getElementById("txt").value;
+            const res = await axios.post("/api", { text });
+            const d = res.data.output;
+            out.innerText = d;
+        }
+    </script>
+</body>
+</html>
