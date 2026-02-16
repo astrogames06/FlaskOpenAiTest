@@ -1,0 +1,8 @@
+:root {
+  --ai-bg: #0F111A;       /* Dark background */
+  --ai-primary: #5C8DFF;  /* Neon blue */
+  --ai-accent: #00FFC2;   /* Mint/cyan accent */
+  --ai-secondary: #FF6EC7;/* Pink accent */
+  --ai-text: #E0E0E0;     /* Light gray text */
+  --ai-muted: #7A7A7A;    /* Muted gray */
+}

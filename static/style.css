@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('palette.css');
 
 *
 {
     margin: 0;
+}
+
+body
+{
+    background-color: var(--ai-bg);
+    color: var(--ai-text);
 }
 
 .title
@@ -26,6 +33,7 @@
     bottom: 0;
     margin-bottom: 10px;
     background-color: rgb(70, 70, 70);
+    color: var(--ai-text);
     left: 50%;
     transform: translateX(-50%);
 }
@@ -33,7 +41,8 @@
 #txt
 {
     font-family: "Space Grotesk", sans-serif;
-    background-color: darkgray;
+    background-color: var(--ai-muted);
+    color: var(--ai-text);
     border: none;
     padding: 20px;
     border-radius: 10px;
@@ -53,13 +62,15 @@
     display: flex;
     align-items: center; 
     justify-content: center;
-    background-color: darkgray;
+    background-color: var(--ai-muted);
+    color: var(--ai-text);
     border: none;
     border-radius: 10px;
 }
 
 .send-btn img
 {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(6%) saturate(325%) hue-rotate(263deg) brightness(116%) contrast(76%);
     width: 20px;
     align-items: center;
 }
@@ -79,6 +90,7 @@
 
 .output-section img
 {
+    filter: brightness(0) saturate(100%) invert(46%) sepia(73%) saturate(2284%) hue-rotate(206deg) brightness(107%) contrast(102%);
     margin-right: 20px;
     width: 30px;
 }
@@ -86,7 +98,8 @@
 #models
 {
     margin-right: 5px;
-    background-color: darkgray;
+    background-color: var(--ai-muted);
+    color: var(--ai-text);
     outline: none;
     border: none;
     border-radius: 10px;
